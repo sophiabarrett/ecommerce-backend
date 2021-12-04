@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbCategoryData => res.json(dbCategoryData))
+    .then(dbData => res.json(dbData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -31,12 +31,12 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(dbCategoryData => {
-      if (!dbCategoryData) {
+    .then(dbData => {
+      if (!dbData) {
         res.status(404).json({ message: `No category found with id ${req.params.id}.` });
         return;
       }
-      res.json(dbCategoryData)
+      res.json(dbData)
     })
     .catch(err => {
       console.log(err);
