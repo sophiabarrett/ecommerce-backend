@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbData => res.json(dbData))
+    .then(dbData => res.status(200).json(dbData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: `No product found with id ${req.params.id}.` });
         return;
       }
-      res.json(dbData)
+      res.status(200).json(dbData)
     })
     .catch(err => {
       console.log(err);
@@ -121,7 +121,7 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((updatedProductTags) => res.status(200).json(updatedProductTags))
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);

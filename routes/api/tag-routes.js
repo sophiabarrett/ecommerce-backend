@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbData => res.json(dbData))
+    .then(dbData => res.status(200).json(dbData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: `No tag found with id ${req.params.id}.` });
         return;
       }
-      res.json(dbData)
+      res.status(200).json(dbData)
     })
     .catch(err => {
       console.log(err);
@@ -45,7 +45,12 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new tag
+  Tag.create(req.body)
+    .then(dbData => res.status(200).json(dbData))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 router.put('/:id', (req, res) => {
