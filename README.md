@@ -14,6 +14,9 @@ Back end for an e-commerce site that manages product inventory including categor
 ## Video Walkthrough
 [Click here to watch the video walkthrough!](https://watch.screencastify.com/v/bq9J7hHobeUEICNS7YNR)
 
+## Screenshot
+![Screenshot of app run in insomnia](./screenshot.png)
+
 # Questions
 For questions contact Sophia Barrett at [sophia@yoursummit.media](mailto:sophia@yoursummit.media) or visit [github.com/sophiabarrett](https://github.com/sophiabarrett).
 
